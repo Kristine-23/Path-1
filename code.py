@@ -21,50 +21,51 @@ Left_Motor_speed = 0 # Initiates the varible for the Left_motor_speed
 Right_Motor = motor.DCMotor(right_forward, right_backward) #Configuration line (it is required)
 Right_Motor_speed = 0  # Initiates the varible for the Right_motor_speed
 
+def Forward():
+    Left_Motor_speed = .5 #Makes left motor roll forward
+    Left_Motor.throttle = Left_Motor_speed
+    Right_Motor_speed = .5 #Makes right motor roll forward
+    Right_Motor.throttle = Right_Motor_speed
+
+def Backward():
+    Left_Motor_speed = -.5 #Makes left motor roll forward
+    Left_Motor.throttle = Left_Motor_speed
+    Right_Motor_speed = -.5 #Makes right motor roll forward
+    Right_Motor.throttle = Right_Motor_speed
+
+def Left():
+    Left_Motor_speed = 0 #Makes left motor roll forward
+    Left_Motor.throttle = Left_Motor_speed
+    time.sleep(0)
+    Right_Motor_speed = .5 #Makes right motor roll forward
+    Right_Motor.throttle = Right_Motor_speed
+
+def Right():
+    Right_Motor_speed = 0 #Makes right motor roll forward
+    Right_Motor.throttle = Right_Motor_speed
+    time.sleep(0)
+    Left_Motor_speed = .5 #Makes left motor roll forward
+    Left_Motor.throttle = Left_Motor_speed
+
+def Stop():
+    Left_Motor_speed = 0 #Makes left motor roll forward
+    Left_Motor.throttle = Left_Motor_speed
+    Right_Motor_speed = 0 #Makes right motor roll forward
+    Right_Motor.throttle = Right_Motor_speed
+
+
 while True:
-    print("Left_Motor_speed = .5")
-    Left_Motor_speed = .5 #Makes left motor roll forward
-    Left_Motor.throttle = Left_Motor_speed
-    Right_Motor_speed = .5 #Makes right motor roll forward
-    Right_Motor.throttle = Right_Motor_speed
+    print("Forward")
+    Forward()
+    time.sleep(4)
+    Stop()
     time.sleep(2)
-    print("Left_Motor_speed = 0")
-    Left_Motor_speed = 0 #Makes left motor roll backwards
-    Left_Motor.throttle = Left_Motor_speed
-    time.sleep(0)
-    Right_Motor_speed = .5 #Makes right motor roll backwards
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(1)
-    print("Left_Motor_speed = .5")
-    Left_Motor_speed = .5 #Makes left motor roll forward
-    Left_Motor.throttle = Left_Motor_speed
-    Right_Motor_speed = .5 #Makes right motor roll forward
-    Right_Motor.throttle = Right_Motor_speed
+    Left()
+    time.sleep(.5)
+    Forward()
+    time.sleep(2.5)
+    Stop()
     time.sleep(2)
-    print("Left_Motor_speed = 0")
-    Left_Motor_speed = 0 #Makes left motor roll backwards
-    Left_Motor.throttle = Left_Motor_speed
-    time.sleep(0)
-    Right_Motor_speed = .5 #Makes right motor roll backwards
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(1)
-    print("Left_Motor_speed = .5")
-    Left_Motor_speed = .5 #Makes left motor roll forward
-    Left_Motor.throttle = Left_Motor_speed
-    Right_Motor_speed = .5 #Makes right motor roll forward
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(2)
-    print("Right_Motor_speed = 0")
-    Right_Motor_speed = 0 #Makes right motor roll backwards
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(0)
-    Left_Motor_speed = .5 #Makes left motor roll backwards
-    Left_Motor.throttle = Left_Motor_speed
-    time.sleep(1)
-    print("Left_Motor_speed = .5")
-    Left_Motor_speed = .5 #Makes left motor roll forward
-    Left_Motor.throttle = Left_Motor_speed
-    Right_Motor_speed = .5 #Makes right motor roll forward
-    Right_Motor.throttle = Right_Motor_speed
-    time.sleep(2)
+    Left()
+    time.sleep(.5)
 
