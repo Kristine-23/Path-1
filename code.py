@@ -6,7 +6,7 @@ import pwmio
 
 from adafruit_motor import motor #Imports a function from the adafruit_moter libaries
 
-Left_forward = board.GP12 # initializes the variable right_forward  and attaches it to GP12
+Left_forward = board.GP9 # initializes the variable right_forward  and attaches it to GP12
 Left_backward = board.GP13 # initalizes the varible right_backward and attaches it to GP13
 Right_backward = board.GP14 # initalizes the varible right_backward and attaches it to GP14
 Right_forward = board.GP15 # initalizes the varible right_backward and attaches it to GP15
@@ -57,7 +57,7 @@ def Stop():
 while True:
     print("Forward")
     Forward()
-    time.sleep(4)
+    time.sleep(4.5)
     Stop()
     time.sleep(2)
     Left()
@@ -68,4 +68,17 @@ while True:
     time.sleep(2)
     Left()
     time.sleep(.5)
-
+    Forward()
+    time.sleep(1)
+    Stop()
+    time.sleep(2)
+    Left()
+    time.sleep(.5)
+    Forward()
+    time.sleep(1.5)
+    Stop()
+    time.sleep(2)
+    Right()
+    time.sleep(.7)
+    Stop()
+    time.sleep(2)
